@@ -26,7 +26,7 @@ describe('generator-modern-protractor:app', () => {
 
     it('copies correct files', () => {
       assert.file([
-        'config/protractor.conf.ts',
+        'config/protractor.conf.js',
         'helpers/helper.ts',
         'page_objects/base.page.ts',
         'page_objects/home.page.ts',
@@ -65,7 +65,7 @@ describe('generator-modern-protractor:app', () => {
     });
 
     it('sets correct baseUrl', () => {
-      assert.fileContent('config/protractor.conf.ts',
+      assert.fileContent('config/protractor.conf.js',
         promptsAnswers.baseUrl
       );
     });

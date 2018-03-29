@@ -1,16 +1,17 @@
 <% if (useTSlint) { %>/* tslint:disable:object-literal-sort-keys */<% } %>
 
-import { browser, Config } from 'protractor'
+require('ts-node').register();
+require('protractor');
 
 // Full protractor configuration file reference could be found here:
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
-const conf: Config = {
+let conf = {
   // Connecting directly to ChromeDriverServer
   directConnect: true,
   specs: [
-    '../specs/**/*.spec.js',
-    '../specs/*.spec.js'
+    '../specs/**/*.spec.ts',
+    '../specs/*.spec.ts'
   ],
   baseUrl: '<%=baseUrl%>',
 
@@ -51,4 +52,4 @@ const conf: Config = {
   SELENIUM_PROMISE_MANAGER: false
 }
 
-exports.config = conf
+exports.config = conf;
